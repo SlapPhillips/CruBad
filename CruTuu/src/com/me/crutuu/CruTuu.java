@@ -22,11 +22,15 @@ public class CruTuu implements ApplicationListener {
     public void create() {      
         log = new FPSLogger();
         running = true;
+        
+        //setting input processor
         Gdx.input.setInputProcessor(input);
         setScreen(new TitleScreen());
     }
     
     public void setScreen(Screen newScreen) {
+        
+        //if theres a screen, remove it and replace with the new one and then initialize
         if (screen != null) screen.removed();
         screen = newScreen;
         if (screen != null) screen.init(this);
@@ -41,6 +45,8 @@ public class CruTuu implements ApplicationListener {
     public void render() {      
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
         delta = Gdx.graphics.getDeltaTime();
+        
+        //tick once 1 frame has gone by
         while (delta > 1.0f / 60.0f) {
             screen.tick(input);
             input.tick();

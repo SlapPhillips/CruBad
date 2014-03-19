@@ -4,13 +4,12 @@ import com.me.crutuu.Input;
 
 public class StreetScreen extends Screen {
 
-    public StreetScreen() {
+    public StreetScreen(int area) {
         
     }
     
     @Override
     public void render() {
-        // TODO Auto-generated method stub
         
     }
     

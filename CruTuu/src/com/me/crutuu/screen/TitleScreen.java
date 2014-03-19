@@ -18,7 +18,7 @@ public class TitleScreen extends Screen {
     
     public void tick(Input input) {
         if (input.buttons[input.MELEE]) {
-            setScreen(new StreetScreen());
+            setScreen(new StreetScreen(0, ));
         }
     }
 
